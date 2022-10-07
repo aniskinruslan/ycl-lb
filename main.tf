@@ -10,9 +10,9 @@ terraform {
 
 
 provider "yandex" {
-  token     = "AQAAAAAq-YEYAATuwVxrH9AGHUGHo6uy_mdi9Kc"
+  token     = "your tocken"
   cloud_id  = "ruslan-cloud"
-  folder_id = "b1gece3cfdhd8fs1370m"
+  folder_id = "your_folder_id"
   zone      = "ru-central1-a"
 }
 
@@ -94,9 +94,9 @@ resource "yandex_lb_network_load_balancer" "network-balancer" {
 
   output "internal_ip_address_vm" {
      value = "${yandex_compute_instance.vm[*].network_interface.0.ip_address}"
- #    value = "${yandex_compute_instance.vm[1].network_interface.0.ip_address}"
+ 
    }
    output "external_ip_address_vm" {
      value = "${yandex_compute_instance.vm[*].network_interface.0.nat_ip_address}"
-#     value = "${yandex_compute_instance.vm[1].network_interface.0.nat_ip_address}"
+
    }
